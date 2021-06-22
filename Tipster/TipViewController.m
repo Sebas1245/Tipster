@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 @property (weak, nonatomic) IBOutlet UIView *labelsContainerView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *tipPercentageControl;
+@property (weak, nonatomic) IBOutlet UISlider *tipAmount;
+@property (weak, nonatomic) IBOutlet UILabel *percentageLabel;
 
 @end
 
@@ -36,18 +38,22 @@ bool hidden = false;
         hidden = false;
         [self showLabels];
     }
-    double tipPercentages[] = {0.15,0.20,0.25};
-    double tipPercentage = tipPercentages [self.tipPercentageControl.selectedSegmentIndex];
-    
+    [self changeAmounts];
+}
+
+- (IBAction)handlePercentageChange:(id)sender {
+    self.percentageLabel.text = [NSString stringWithFormat:@"%.1f%%",self.tipAmount.value * 100 ];
+    [self changeAmounts];
+}
+
+-(void)changeAmounts {
     double bill = [self.billField.text doubleValue];
-    double tip = bill * tipPercentage;
+    double tip = bill * self.tipAmount.value;
     double total = bill + tip;
-    NSLog(@"%f",tip);
-    NSLog(@"%f",total);
+    
     self.totalLabel.text = [NSString stringWithFormat:@"$%.2f",tip ];
     self.tipLabel.text = [NSString stringWithFormat:@"$%.2f",total ];
-}
-- (IBAction)showResult:(id)sender {
+    self.totalLabel.alpha = 2;
 }
 
 -(void)hideLabels {
@@ -62,6 +68,8 @@ bool hidden = false;
     }];
     
 }
+
+
 -(void)showLabels {
     [UIView animateWithDuration:0.3 animations:^{
         CGRect billFrame = self.billField.frame;

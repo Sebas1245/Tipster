@@ -37,31 +37,32 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0h-2S-e18">
-                                        <rect key="frame" x="167" y="57" width="122" height="21"/>
+                                        <rect key="frame" x="176" y="8" width="122" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpd-n7-M3B">
-                                        <rect key="frame" x="164" y="0.0" width="125" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpd-n7-M3B">
+                                        <rect key="frame" x="173" y="58" width="125" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="$0.00">
+                                                <attributes>
+                                                    <font key="NSFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vvV-Bt-HGL">
-                                        <rect key="frame" x="0.0" y="153" width="306" height="32"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.20000000000000001" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fjo-sN-699">
+                                        <rect key="frame" x="-10" y="136" width="310" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <segments>
-                                            <segment title="15%"/>
-                                            <segment title="20%"/>
-                                            <segment title="25%"/>
-                                        </segments>
                                         <connections>
-                                            <action selector="updateLabels:" destination="BYZ-38-t0r" eventType="valueChanged" id="IMq-z6-y4G"/>
+                                            <action selector="handlePercentageChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="xJo-ZM-PcL"/>
                                         </connections>
-                                    </segmentedControl>
+                                    </slider>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -74,6 +75,13 @@
                                     <action selector="updateLabels:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="J7f-Av-c9B"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zH-Tj-fBY">
+                                <rect key="frame" x="162" y="511" width="90" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -86,8 +94,9 @@
                     <connections>
                         <outlet property="billField" destination="mS2-fA-baX" id="xtk-vq-ZsJ"/>
                         <outlet property="labelsContainerView" destination="NCT-7g-X8G" id="OvA-oJ-vuY"/>
+                        <outlet property="percentageLabel" destination="6zH-Tj-fBY" id="yse-28-4kI"/>
+                        <outlet property="tipAmount" destination="fjo-sN-699" id="ajk-Z1-ff9"/>
                         <outlet property="tipLabel" destination="bpd-n7-M3B" id="JC4-F4-Aqb"/>
-                        <outlet property="tipPercentageControl" destination="vvV-Bt-HGL" id="B99-J0-2aC"/>
                         <outlet property="totalLabel" destination="h0h-2S-e18" id="z7T-yn-wBk"/>
                     </connections>
                 </viewController>
