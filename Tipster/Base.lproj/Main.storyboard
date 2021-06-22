@@ -80,6 +80,9 @@
                                     <segment title="20%"/>
                                     <segment title="25%"/>
                                 </segments>
+                                <connections>
+                                    <action selector="updateLabels:" destination="BYZ-38-t0r" eventType="valueChanged" id="IMq-z6-y4G"/>
+                                </connections>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mS2-fA-baX">
                                 <rect key="frame" x="219" y="121" width="139" height="34"/>

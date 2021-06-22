@@ -26,10 +26,11 @@
 }
 
 - (IBAction)updateLabels:(id)sender {
-    
+    double tipPercentages[] = {0.15,0.20,0.25};
+    double tipPercentage = tipPercentages [self.tipPercentageControl.selectedSegmentIndex];
     
     double bill = [self.billField.text doubleValue];
-    double tip = bill * 0.2;
+    double tip = bill * tipPercentage;
     double total = bill + tip;
     NSLog(@"%f",tip);
     NSLog(@"%f",total);
