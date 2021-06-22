@@ -30,11 +30,11 @@ bool hidden = false;
 }
 
 - (IBAction)updateLabels:(id)sender {
-    if(self.billField.text.length == 0) {
+    if(self.billField.text.length == 0 && !hidden) {
         [self hideLabels];
         hidden = true;
     }
-    else if(hidden){
+    else if(self.billField.text.length > 0 && hidden){
         hidden = false;
         [self showLabels];
     }
