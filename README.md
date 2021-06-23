@@ -22,7 +22,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [X] A slider to set the tip percentage more easily. 
 
 ## Video Walkthrough
 
@@ -34,7 +34,7 @@ Here's a walkthrough of implemented user stories:
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Mainly, getting to know Xcode and the development environment of Xcode. Having to sort through something that is completely knew was something that made the process go a bit slower. Also trying to add additinal features was defintely a creative challenge; it was a bit harder than I expected to come up with original features for the app. 
 
 
 ## License
