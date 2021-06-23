@@ -28,7 +28,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='./img.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![](./tipster_demo.gif)
 
 
 
